@@ -67,7 +67,7 @@ AI 最擅长处理文本。选工具时，优先选能用文本和 AI 交互的�
 
 | 方案 | 让 AI 能做什么 | 获取地址 | 实测与注意 |
 | --- | --- | --- | --- |
-| 梦源 DSLogic + logic-agent 自带的 dslab 命令行（推荐） | 不开界面采集，设阈值、硬件触发，输出 VCD；AI 用脚本解码和测量。同一个包里的 sigrok-cli 能解 150 多种协议 | https://github.com/chenyingchun0312/logic-agent （npm 包 `logic-agent-mcp`） | 实测流模式 1 MHz 采几秒、缓存模式 100 MHz，收发帧全部一致。用 `npm pack` 下载固定版本后解压使用 |
+| 梦源 DSLogic + logic-agent 自带的 dslab 命令行（推荐） | 不开界面采集，设阈值、硬件触发，输出 VCD；AI 用脚本解码和测量。同一个包里的 sigrok-cli 能解 150 多种协议 | https://github.com/chenyingchun0312/logic-agent （npm 包 `logic-agent-mcp`） | 实测流模式 1 MHz 采几秒、缓存模式 100 MHz，收发帧全部一致。用 `npm pack` 下载固定版本后解压使用。操作手册和脚本是本仓库的 [dslogic-logic-analyzer](../dslogic-logic-analyzer/SKILL.md) |
 | logic-agent 的 MCP | 采集后按编号存盘，只返回统计和有上限的解码结果，不把整段波形塞给 AI | 同上 | 工具设计好。1.2.1 版不能设阈值，固定 1.0 V，适合 3.3 V、5 V 逻辑信号；直接量 12 V 的 LIN 总线会采错 |
 | ALL LOGIC（基于 DSView 修改，支持梦源、正点原子、Sipeed 等多家） | 界面程序内置 HTTP MCP，能配置、采集、导出 CSV | https://github.com/Doukeyi-X/ALL-LOGIC | 实测能采集和导出。没有触发参数；内置解码器不能设波特率；只开 1 个通道时导出大量样本会崩溃。MCP 默认开启、不鉴权、允许任何网页跨域调用，不用时关掉程序 |
 | 正点原子 ATK-Logic：atk-logic-mcp | 专为正点原子逻辑分析仪写的 MCP，能采集、解码、保存 | https://github.com/hugelzhang/atk-logic-mcp | 未实测。要用 Zadig 换驱动，换了以后原厂上位机不能用；作者注明硬件触发不生效 |

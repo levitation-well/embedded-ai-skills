@@ -1,0 +1,5 @@
+{
+  "runtime": "%USERPROFILE%\\.local\\logic-agent-1.2.1\\package\\runtime",
+  "captures": "%USERPROFILE%\\la-captures",
+  "toomoss_sdk": "D:\\usb2can_lin_pwm_example\\sdk\\libs\\windows\\x86_64"
+}
