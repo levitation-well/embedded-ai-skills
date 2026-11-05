@@ -1,4 +1,5 @@
 # 各人本机的路径配置和采集结果，不入库
 skills/*/scripts/la_config.json
+skills/*/local.md
 captures/
 __pycache__/

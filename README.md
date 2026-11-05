@@ -10,6 +10,7 @@
 | --- | --- |
 | [embedded-ai-setup](skills/embedded-ai-setup/SKILL.md) | 先提醒你为 AI 准备知识库，再列出推荐的工具，逐项问你要不要，给出官方获取地址 |
 | [dslogic-logic-analyzer](skills/dslogic-logic-analyzer/SKILL.md) | 让 AI 不开界面直接操作梦源 DSLogic 逻辑分析仪：采集、触发、LIN 解码与时序测量、调用 sigrok 解其他协议，和图莫斯 LIN 工具做收发闭环测试；附各家逻辑分析仪 MCP 的实测评估 |
+| [canoe-operation](skills/canoe-operation/SKILL.md) | 让 AI 用 COM 接口操作 Vector CANoe 12，跑 LIN 从节点一致性测试（ISO 17987-6）：写被测件设置、挑选用例、开跑、导出并分析报告；附测试库字段编码、传输层服务文件、供电与复位、已知的判定特点 |
 
 本仓库只做指引，不打包任何厂商软件、驱动或动态库。工具请从官方渠道获取，并遵守各自的许可条款。
 
@@ -29,7 +30,7 @@ mklink /J "%USERPROFILE%\.claude\skills\embedded-ai-setup" "D:\embedded-ai-skill
 mklink /J "%USERPROFILE%\.agents\skills\embedded-ai-setup" "D:\embedded-ai-skills\skills\embedded-ai-setup"
 ```
 
-其他 skill 同样链接，把命令里的 `embedded-ai-setup` 换成对应目录名即可。`dslogic-logic-analyzer` 链接后，把 `scripts\la_config.example.json` 复制成 `la_config.json` 并改成本机路径。
+其他 skill 同样链接，把命令里的 `embedded-ai-setup` 换成对应目录名即可。`dslogic-logic-analyzer` 链接后，把 `scripts\la_config.example.json` 复制成 `la_config.json` 并改成本机路径。`canoe-operation` 需要 Python 的 pywin32 和你自己的 CANoe 许可；本机的安装位置、工程路径等可写在该 skill 目录下的 `local.md`，它不入库。
 
 删除链接时用 `rmdir`，不要用递归删除，否则会顺着链接删掉仓库里的文件。
 
